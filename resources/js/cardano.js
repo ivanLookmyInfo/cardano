@@ -4,6 +4,16 @@
 'use strict';
 var Cardano = (function($){
     return {
+        getObj: function(selector){
+            return $(selector);
+        },
+        isValidEmail : function(email, strict){
+            if ( !strict ) email = email.replace(/^\s+|\s+$/g, '');
+            return (/^([a-z0-9_\-]+\.)*[a-z0-9_\-]+@([a-z0-9][a-z0-9\-]*[a-z0-9]\.)+[a-z]{2,4}$/i).test(email);
+        },
+        printError: function(mes){
+            $('#error-message').text(mes);
+        },
         clearInput: function(selector){
             this.
             addEvent('focus',selector,function(){
@@ -40,21 +50,21 @@ var Cardano = (function($){
 Cardano
     .clearInput('.input-form')
     .addEvent('submit','#registrationForm',function(e){
-        var mail = $('#emailAddress'),
-            firstName = $('#firstName'),
-            lastName = $('#lastName'),
+        var mail = Cardano.getObj('#emailAddress'),
+            firstName = Cardano.getObj('#firstName'),
+            lastName = Cardano.getObj('#lastName'),
             flag = false;
 
-        if(!isValidEmail(mail.val(),true)){
-            printError('email address contains invalid characters');
+        if(!Cardano.isValidEmail(mail.val(),true)){
+            Cardano.printError('email address contains invalid characters');
             flag = true;
         }
         if(firstName.val() == 'First Name' || firstName.val() == ''){
-            printError('First Name contains invalid characters');
+            Cardano.printError('First Name contains invalid characters');
             flag = true;
         }
         if(lastName.val() == 'Last Name' || lastName.val() == ''){
-            printError('Last Name contains invalid characters');
+            Cardano.printError('Last Name contains invalid characters');
             flag = true;
         }
 
@@ -62,23 +72,17 @@ Cardano
             e.preventDefault();
             return false;
         }
-        //$(this).subarray();
+
+        // Send form
+        // Cardano.getObj(this).submit();
+        // or send ajax and ...
 
         e.preventDefault();
 
-        $(this).find('.row').hide();
-        $('.success-message-form').show();
+        // success
+        Cardano.getObj(this).find('.row').hide();
+        Cardano.getObj('.success-message-form').show();
     })
-    .addEvent('hover',document,function(){
-        
+    .addEvent('hover',document,function(e){
+        console.log(e.pageX, e.pageY);
     });
-
-
-function isValidEmail (email, strict){
-    if ( !strict ) email = email.replace(/^\s+|\s+$/g, '');
-    return (/^([a-z0-9_\-]+\.)*[a-z0-9_\-]+@([a-z0-9][a-z0-9\-]*[a-z0-9]\.)+[a-z]{2,4}$/i).test(email);
-}
-
-function printError(mes){
-    $('#error-message').text(mes);
-}

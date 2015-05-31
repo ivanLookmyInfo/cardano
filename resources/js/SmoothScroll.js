@@ -22,8 +22,8 @@ var defaultOptions = {
 
     // Scrolling Core
     frameRate        : 150, // [Hz]
-    animationTime    : 400, // [px]
-    stepSize         : 120, // [px]
+    animationTime    : 1500, // [px]
+    stepSize         : 60, // [px]
 
     // Pulse (less tweakable)
     // ratio of "tail" to "acceleration"
@@ -44,9 +44,6 @@ var defaultOptions = {
     fixedBackground   : true, 
     excluded          : ""    
 };
-
-var options = defaultOptions;
-
 
 // Other Variables
 var isExcluded = false;
