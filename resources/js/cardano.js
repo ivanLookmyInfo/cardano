@@ -14,6 +14,7 @@ var Cardano = (function($){
         printError: function(mes){
             $('#error-message').text(mes);
         },
+        centerLogo: $('.big-logo'),
         clearInput: function(selector){
             this.
             addEvent('focus',selector,function(){
@@ -37,9 +38,7 @@ var Cardano = (function($){
             if(typeof selector == 'string'){
                 $(document).on(event,selector,fn);
             } else{
-                $(document).on(event,function(){
-
-                })
+                $(document).on(event,fn);
             }
             return this;
         }
@@ -82,7 +81,14 @@ Cardano
         // success
         Cardano.getObj(this).find('.row').hide();
         Cardano.getObj('.success-message-form').show();
-    })
-    .addEvent('hover',document,function(e){
-        console.log(e.pageX, e.pageY);
     });
+(function(){
+    var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone"),
+        isAndroid = navigator.userAgent.toLowerCase().indexOf("android");
+    if(isiPhone == -1 || isAndroid == -1){
+        $('.big-logo').plaxify({"xRange":15,"yRange":15});
+        $('.center-image').plaxify({"xRange":5,"yRange":5,"invert":true});
+        $.plax.enable();
+
+    }
+})();

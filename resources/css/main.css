@@ -28,7 +28,7 @@ input ,textarea, a{
 
 
 body {
-    font: 18px 'proxima_novaregular';
+    font: 100% 'proxima_novaregular';
     color: #eceded;
     background: #000;
 }
@@ -44,7 +44,7 @@ body {
     padding-right: 0;
 }
 .center-image{
-    width: 100%;
+    width: 99.5%;
     height: 852px;
     margin-top: -65px;
     background: url(../images/center-image.png) no-repeat 50% 50%;
@@ -64,7 +64,7 @@ body {
 }
 .small-description{
     text-align: center;
-    font-size: 30px;
+    font-size: 187.5%;
 }
 .for-form{
     margin-top: 140px;
@@ -80,7 +80,7 @@ body {
     padding-left: 19px;
     width: 100%;
     color: #f1f1f2;
-    font: 18px 'proxima_novaregular';
+    font: 112.5% 'proxima_novaregular';
 }
 .submit-form{
     display: block;
@@ -88,7 +88,7 @@ body {
     border: 1px solid #fff;
     border-radius: 4px;
     background: transparent;
-    font: 18px 'proxima_novaregular';
+    font: 112.5% 'proxima_novaregular';
     height: 50px;
     margin-bottom: 75px;
 }
@@ -133,18 +133,18 @@ footer{
     background-position: -184px -41px;
 }
 p.copyright{
-    font: 14px/75px 'proxima_novaregular';
+    font: 87.5%/75px 'proxima_novaregular';
     color: #eceded;
 }
 #error-message{
     color: #952121;
-    font: 18px 'proxima_novaregular';
+    font: 112.5% 'proxima_novaregular';
 }
 .reg-complete{
     background: url(../images/reg-complete.png) no-repeat left 50%;
     height: 55px;
     text-align: center;
-    font: 30px/55px 'proxima_novaregular';
+    font: 187.5%/55px 'proxima_novaregular';
     color: #eceded;
     margin-bottom: 150px;
 }
