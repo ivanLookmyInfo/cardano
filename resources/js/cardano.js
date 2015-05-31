@@ -82,6 +82,7 @@ Cardano
         Cardano.getObj(this).find('.row').hide();
         Cardano.getObj('.success-message-form').show();
     });
+
 (function(){
     var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone"),
         isAndroid = navigator.userAgent.toLowerCase().indexOf("android");
@@ -91,4 +92,7 @@ Cardano
         $.plax.enable();
 
     }
+    $(window).resize(function(){
+        location.reload(true);
+    });
 })();
